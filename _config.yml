@@ -4,10 +4,8 @@ email: mobileapps@codecomputerlove.com
 description: > # this means to ignore newlines until "baseurl:"
   Meta description for search
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.fliponitapp.com" # the base hostname & protocol for your site
-twitter_username: computerlovers
-github_username:  code-computerlove
+
 
 # Build settings
 markdown: kramdown
-exclude: [vendor]
+exclude: ["vendor"]
