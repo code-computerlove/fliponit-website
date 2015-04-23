@@ -27,7 +27,7 @@
     margin:0 auto;
     width: 125px;
     height: 124px;
-    background: url(images/logo.svg);
+    background: url(../images/logo.svg);
     background-size: 125px 124px;
     @extend %ir
 }
@@ -35,7 +35,7 @@
 .watch {
     width: 184px;
     height: 300px;
-    background: url(images/watch.png);
+    background: url(../images/watch.png);
     background-size: 184px 300px;
     margin: 0 auto 40px;
     position:relative;
@@ -75,7 +75,7 @@
     position: absolute;
     top: -70px;
     left: -63px;
-    background:transparent url(images/coin_sprite.png) no-repeat 0 0;
+    background:transparent url(../images/coin_sprite.png) no-repeat 0 0;
     background-size:250px 3250px;
     width:250px;
     height: 250px;
@@ -91,7 +91,7 @@
 .phone-container {
     width: 208px;
     height: 290px;
-    background: url(images/phone.png);
+    background: url(../images/phone.png);
     background-size: 208px 290px;
     margin: 0 auto $spacing-unit-v;
      @include media-query($on-medium-screen) {
@@ -112,7 +112,7 @@
 .app-store-available {
     width: 150px;
     height: 55px;
-    background: url(images/app_store_available.svg);
+    background: url(../images/app_store_available.svg);
     background-size: 150px 55px;
     margin: 0 auto $spacing-unit-v;
     @extend %ir
@@ -132,14 +132,14 @@
 }
 
 .app-store-download {
-    background:transparent url(images/download_short.svg) no-repeat 0 0;
+    background:transparent url(../images/download_short.svg) no-repeat 0 0;
     background-size: 165px 64px;
     width:165px;
     height:64px;
     margin:30px auto 0;
     @extend %ir;
     @include media-query($on-medium-screen) {
-        background-image: url(images/download_long.svg);
+        background-image: url(../images/download_long.svg);
         background-size: 236px 42px;
         width: 236px;
         height: 42px;
@@ -190,9 +190,9 @@
     }
 }
 
-.coins .gbp { background-image: url(images/coin_gbp.svg); }
-.coins .usd { background-image: url(images/coin_usd.svg); }
-.coins .eur { background-image: url(images/coin_eur.svg); }
+.coins .gbp { background-image: url(../images/coin_gbp.svg); }
+.coins .usd { background-image: url(../images/coin_usd.svg); }
+.coins .eur { background-image: url(../images/coin_eur.svg); }
 
 .footer a {
     display: block;
@@ -209,7 +209,7 @@
 }
 
 .footer .author > span {
-    background:transparent url(images/code_heart.svg) no-repeat 0 center;
+    background:transparent url(../images/code_heart.svg) no-repeat 0 center;
     background-size: 17px 20px;
     padding-left:30px; 
 }
@@ -223,7 +223,7 @@
 }
 
 .footer .download > span {
-    background:transparent url(images/apple_logo.svg) no-repeat 0 center;
+    background:transparent url(../images/apple_logo.svg) no-repeat 0 center;
     background-size: 17px 20px;
     padding-left:30px
 }
