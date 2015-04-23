@@ -32,21 +32,29 @@
     @extend %ir
 }
 
-.watch {
-    width: 184px;
-    height: 300px;
-    background: url(../images/watch.png);
-    background-size: 184px 300px;
-    margin: 0 auto 40px;
+.watch-wrapper {
+    width: 281px;
+    height: 281px;
     position:relative;
+    margin: 0 auto 40px;
+}
+
+.watch {
+    position: absolute;
+    width: 281px;
+    height: 281px;
+    background: url(../images/watch.png);
+    background-size: 281px 281px;
+    z-index: 100;
+    pointer-events: none;    
 }
 
 .coin-anim-wrapper {
     position: absolute;
-    top: 96px;
-    left: 28px;
-    width: 120px; 
-    height: 120px; 
+    top: 100px;
+    left: 97px;
+    width: 80px; 
+    height: 80px; 
     background: #000;
     border-radius: 100%;
 }
@@ -58,27 +66,27 @@
 }
 
 @-webkit-keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #fcb935, 0 0 100px #fcb935; }
+    to { box-shadow: 0 0 100px #fcb935, 0 0 50px #fcb935; }
     from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
 }
 @-moz-keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #fcb935, 0 0 100px #fcb935; }
-    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
+    to { box-shadow: 0 0 100px #fcb935, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 50px #000, 0 0 25px #000; }
 }
 
 @keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #ff0, 0 0 100px #fcb935; }
-    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
+    to { box-shadow: 0 0 100px #ff0, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 50px #000, 0 0 25px #000; }
 }
 
 .coin-anim {
     position: absolute;
-    top: -70px;
-    left: -63px;
+    top: -56px;
+    left: -55px;
     background:transparent url(../images/coin_sprite.png) no-repeat 0 0;
-    background-size:250px 3250px;
-    width:250px;
-    height: 250px;
+    background-size:190px 2470px;
+    width:190px;
+    height: 190px;
     display: block;
 }
 

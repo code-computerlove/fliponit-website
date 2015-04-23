@@ -1,42 +1,82 @@
-var scrollUp = (function () {
-  
-  var timerId; // stored timer in case you want to use clearInterval later
-  var wrapper = document.getElementById('coinAnimWrapper');
+(function(){
 
-  function pulse() {
-    wrapper.className = wrapper.className + ' coin-anim-play';
-  };
+  var FlipOnIt = {
 
-  return function (height, times, element, repeat) {
+    timerId: null,
+    wrapper: null,
+    isAnimating: false,
+    element: null,
+    frameSize: 0,
+    frameCount: 0,
+    repeat: false,
 
-    element.addEventListener('click', function(){
-        
-        window.clearInterval(timerId);
-        wrapper.className = 'coin-anim-wrapper';
-        scrollUp(250, 12, element, false);
-    });
 
-    var i = 0; // a simple counter
-    timerId = setInterval(function () {
+    init: function(element, frameSize, frameCount, repeat) {
+
+      var self = this;
+
+      self.element = element;
+      self.frameCount = frameCount;
+      self.frameSize = frameSize;
+      self.repeat = repeat;
+      self.wrapper = document.getElementById('coinAnimWrapper');
+
+      self.element.addEventListener('click', function(){
+
+         if (self.isAnimating == false) {
+
+            window.clearInterval(self.timerId);
+            self.wrapper.className = 'coin-anim-wrapper';
+            self.startAnimation();
+          }
+
+      });
+
+      self.startAnimation();
+    },
+
+
+    pulse: function() {
+
+      this.wrapper.className = this.wrapper.className + ' coin-anim-play';
+    },
+
+
+    startAnimation: function() {
+
+      var self = this;
+      var i = 0;
+      self.isAnimating = true;
       
-      if (!repeat && i >= times) {
-        pulse();
-        window.clearInterval(timerId);
-      }
+      self.timerId = setInterval(function () {
+        
+        if (!self.repeat && i >= self.frameCount) {
 
-      if (i > times) {
-        i = 0;
-      }
+          self.pulse();
+          self.isAnimating = false;
+          window.clearInterval(self.timerId);
+        }
 
-      element.style.backgroundPosition = "0px -" + (i * height) + 'px'; //scroll up
-      i++;
+        if (i > self.frameCount) {
+          i = 0;
+        }
 
-    }, 40); // every 100 milliseconds
+        self.element.style.backgroundPosition = "0px -" + (i * self.frameSize) + 'px';
+        i++;
+
+      }, 50);
+
+    }
+
   };
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var element = document.getElementById('coinAnim');
+    FlipOnIt.init(element, 190, 12, false);
+
+  }, false);
 
 })();
 
-var elem = document.getElementById('coinAnim');
-
-// start animation:
-scrollUp(250, 12, elem, false)
