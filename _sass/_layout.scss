@@ -38,6 +38,48 @@
     background: url(/images/watch.png);
     background-size: 184px 300px;
     margin: 0 auto 40px;
+    position:relative;
+}
+
+.coin-anim-wrapper {
+    position: absolute;
+    top: 96px;
+    left: 28px;
+    width: 120px; 
+    height: 120px; 
+    background: #000;
+    border-radius: 100%;
+}
+
+.coin-anim-play {
+    -webkit-animation: 'sunpulse' 2s alternate infinite;
+    -moz-animation: 'sunpulse' 2s alternate infinite;
+    animation: 'sunpulse' 2s alternate infinite;
+}
+
+@-webkit-keyframes 'sunpulse' {
+    to { box-shadow: 0 0 100px #fcb935, 0 0 100px #fcb935; }
+    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
+}
+@-moz-keyframes 'sunpulse' {
+    to { box-shadow: 0 0 100px #fcb935, 0 0 100px #fcb935; }
+    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
+}
+
+@keyframes 'sunpulse' {
+    to { box-shadow: 0 0 100px #ff0, 0 0 100px #fcb935; }
+    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
+}
+
+.coin-anim {
+    position: absolute;
+    top: -70px;
+    left: -63px;
+    background:transparent url(/images/coin_sprite.png) no-repeat 0 0;
+    background-size:250px 3250px;
+    width:250px;
+    height: 250px;
+    display: block;
 }
 
 .phone-wrapper {
