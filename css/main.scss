@@ -7,25 +7,24 @@
 
 // Our variables
 $base-font-family: 'Dosis', Helvetica, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size:   21px;
+$small-font-size:  $base-font-size * 0.825;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit-h:     40px;
+$spacing-unit-v:     50px;
 
-$text-color:       #111;
+$text-color:       #888888;
 $background-color: #000000;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$background-color-alt: #181818;
+$brand-color:      #fcb935;
+$grey-color:       #282828;
 
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-medium-screen: 640px;
+$on-large-screen:  800px;
 
 
 
@@ -37,7 +36,7 @@ $on-laptop:        800px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
+    @media screen and (min-width: $device) {
         @content;
     }
 }
@@ -45,8 +44,6 @@ $on-laptop:        800px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
+@import "base",
         "layout",
-        "syntax-highlighting"
-;
+        "syntax-highlighting";

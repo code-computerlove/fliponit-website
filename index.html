@@ -2,22 +2,56 @@
 layout: default
 ---
 
-<div class="home">
+<section class="odd">
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </header>
+  
+    <div class="watch-container">
+      <div class="watch">
+        <img src="/images/coin_flipping.gif" alt="Coin Flipping">
+      </div>
+      <a class="app-store-available" href="http://www.apple.com/">
+        Available on the App Store
+      </a>
+    </div>
 
-  <h1 class="page-heading">Posts</h1>
+    <div class="watch-copy">
+      <p>The Godfather or Dirty Dancing? Pizza or chinese? Stay in or go out?</p>
+      <p>‘Flip on it’ is an app for the Apple watch designed to help you make decisions.</p>
+    </div>
+  </div>
+</section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<section class="even">
+  <div class="wrapper phone-wrapper">
+    <div class="phone-container">
+      <img src="/images/app_screens.gif" alt="App Screens">
+    </div>
+    <div class="phone-copy">
+      <p>Use the iPhone app to choose your coin, see the results of your last 5 flips as well as the all time record of heads vs tails.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<section class="odd">
+  <div class="wrapper">
+    <ul class="coins">
+      <li class="coin gbp">GBP</li>
+      <li class="coin usd">USD</li>
+      <li class="coin eur">EUR</li>
+    </ul>
+  </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<section class="even">
+  <div class="wrapper">
+    <div class="watch-phone">
+      <img src="/images/watch-and-phone.svg" alt="Apple Watch with iPhone">
+      <a class="app-store-download" href="http://www.apple.com/">
+        Download from the App Store
+      </a>
+    </div>
+  </div>
+</section>

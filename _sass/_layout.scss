@@ -1,236 +1,189 @@
-/**
- * Site header
- */
-.site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+.even {
+    background-color:$background-color-alt;
+}
 
-    // Positioning context for the mobile navigation icon
-    position: relative;
+.site-header {
+    margin-bottom:$spacing-unit-v;
+     @include media-query($on-medium-screen) {
+        float:left;
+        width: 250px;
+    }
+}
+
+.watch-container {
+     @include media-query($on-medium-screen) {
+        float:right;
+    }
+}
+
+.watch-copy {
+     @include media-query($on-medium-screen) {
+        width: 250px;
+        text-align: center;
+    }
 }
 
 .site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
+    margin:0 auto;
+    width: 125px;
+    height: 124px;
+    background: url(/images/logo.svg);
+    background-size: 125px 124px;
+    @extend %ir
+}
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+.watch {
+    width: 184px;
+    height: 300px;
+    background: url(/images/watch.png);
+    background-size: 184px 300px;
+    margin: 0 auto 40px;
+}
+
+.phone-wrapper {
+    @include media-query($on-medium-screen) {
+        padding-bottom:0;
     }
 }
 
-.site-nav {
-    float: right;
-    line-height: 56px;
+.phone-container {
+    width: 208px;
+    height: 290px;
+    background: url(/images/phone.png);
+    background-size: 208px 290px;
+    margin: 0 auto $spacing-unit-v;
+     @include media-query($on-medium-screen) {
+        float:left;
+        margin-bottom:0;
+    }
+}
 
-    .menu-icon {
+.phone-copy {
+     @include media-query($on-medium-screen) {
+        float:right;
+        width: 210px;
+        text-align: center;
+        padding-top:50px;
+    }
+}
+
+.app-store-available {
+    width: 150px;
+    height: 55px;
+    background: url(/images/app_store_available.svg);
+    background-size: 150px 55px;
+    margin: 0 auto $spacing-unit-v;
+    @extend %ir
+}
+
+.watch-phone {
+    padding:160px 0px;
+    text-align:center;
+    @include media-query($on-medium-screen) {
+        padding:15px 0;
+    }
+}
+
+.watch-phone > img {
+    width:116px;
+    height:65px;
+}
+
+.app-store-download {
+    background:transparent url(/images/download_short.svg) no-repeat 0 0;
+    background-size: 165px 64px;
+    width:165px;
+    height:64px;
+    margin:30px auto 0;
+    @extend %ir;
+    @include media-query($on-medium-screen) {
+        background-image: url(/images/download_long.svg);
+        background-size: 236px 42px;
+        width: 236px;
+        height: 42px;
+    }
+}
+
+.coins {
+    list-style: none;
+    margin:0;
+    @extend %clearfix;
+    @include media-query($on-medium-screen) {
+        text-align: justify;
+    }
+}
+
+.coins:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.coin {
+    margin: 0 auto;
+    width: 195px;
+    height: 60px;
+    background-size: 195px 104px;
+    color:$brand-color;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    padding-top: 115px;
+    font-size: $small-font-size;
+    font-weight: 500;
+    @include media-query($on-medium-screen) {
+        display: inline-block;
+        text-align: center;
+        width: 147px;
+        height: 20px;
+        padding-top:90px;
+        background-size: 147px 77px;
+        font-size:14px;
+    }
+}
+
+.coin:last-child {
+    height: 20px;
+    @include media-query($on-medium-screen) {
+       margin-right:0;
+    }
+}
+
+.coins .gbp { background-image: url(/images/coin_gbp.svg); }
+.coins .usd { background-image: url(/images/coin_usd.svg); }
+.coins .eur { background-image: url(/images/coin_eur.svg); }
+
+.footer a {
+    display: block;
+    padding:20px 0;
+    font-size:$small-font-size;
+    font-weight:500;
+    text-decoration:none;
+    text-align:center;   
+}
+
+.footer .author {
+    background-color:$grey-color;
+    color:$text-color;
+}
+
+.footer .author > span {
+    background:transparent url(/images/code_heart.svg) no-repeat 0 center;
+    background-size: 17px 20px;
+    padding-left:30px; 
+}
+
+.footer .download {
+    background:$brand-color;
+    color:$background-color;
+    @include media-query($on-medium-screen) {
         display: none;
     }
+}
 
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
+.footer .download > span {
+    background:transparent url(/images/apple_logo.svg) no-repeat 0 center;
+    background-size: 17px 20px;
+    padding-left:30px
 }
 
 
-
-/**
- * Site footer
- */
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
-}
-
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-}
-
-.footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
-
-.footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-
-
-/**
- * Page content
- */
-.page-content {
-    padding: $spacing-unit 0;
-}
-
-.page-heading {
-    font-size: 20px;
-}
-
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
-.post-link {
-    display: block;
-    font-size: 24px;
-}
-
-
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
-.post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
-}
-
-.post-content {
-    margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
-}
