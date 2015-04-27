@@ -57,14 +57,16 @@
           window.clearInterval(self.timerId);
         }
 
-        if (i > self.frameCount) {
+        if (i >= self.frameCount) {
           i = 0;
         }
 
-        self.element.style.backgroundPosition = "0px -" + (i * self.frameSize) + 'px';
+        self.element.style.backgroundPosition = '-' + (i * self.frameSize) + 'px 0px';
         i++;
 
-      }, 50);
+        console.log(self.element.style.backgroundPosition);
+
+      }, 1000/24);
 
     }
 
@@ -74,7 +76,9 @@
   document.addEventListener("DOMContentLoaded", function () {
 
     var element = document.getElementById('coinAnim');
-    FlipOnIt.init(element, 190, 12, false);
+    FlipOnIt.init(element, 190, 94, false);
+
+
 
   }, false);
 
