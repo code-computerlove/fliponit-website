@@ -33,8 +33,6 @@
 }
 
 .watch-wrapper {
-    width: 281px;
-    height: 281px;
     position:relative;
     margin: 0 auto 40px;
 }
@@ -42,24 +40,24 @@
 .watch {
     position: relative;
     margin:0 auto;
-    width: 190px;
+    width: 200px;
     height: 281px;
     background: url(../images/watch.png);
-    background-size: 190px 281px;
+    background-size: 200px 281px;
     z-index: 100;
     pointer-events: none; 
 }
 
 .coin-anim-wrapper {
     position: absolute;
-    top: 100px;
-    left: 76px;
+    top: 101px;
+    left: 81px;
     width: 80px; 
     height: 80px; 
     background: #000;
     border-radius: 100%;
     @include media-query($on-medium-screen) {
-        left:96px;
+        left:61px;
     }
 }
 
@@ -180,7 +178,7 @@
 
 .coins {
     list-style: none;
-    margin:0;
+    margin:0 0 -40px 0;
     @extend %clearfix;
     @include media-query($on-medium-screen) {
         text-align: justify;
@@ -194,9 +192,8 @@
 }
 
 .coin {
-    margin: 0 auto;
+    margin: 0 auto 50px;
     width: 195px;
-    height: 60px;
     background-size: 195px 104px;
     color:$brand-color;
     background-repeat:no-repeat;
@@ -208,18 +205,15 @@
         display: inline-block;
         text-align: center;
         width: 147px;
-        height: 20px;
         padding-top:90px;
         background-size: 147px 77px;
         font-size:14px;
+        margin-bottom: 0;
     }
 }
 
 .coin:last-child {
-    height: 20px;
-    @include media-query($on-medium-screen) {
-       margin-right:0;
-    }
+    margin-bottom: 0;
 }
 
 .coins .gbp { background-image: url(../images/coin_gbp.svg); }
