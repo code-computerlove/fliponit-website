@@ -232,6 +232,10 @@
 .footer .author {
     background-color:$grey-color;
     color:$text-color;
+    margin-bottom:65px;
+    @include media-query($on-medium-screen) {
+        margin-bottom:0;
+    }
 }
 
 .footer .author > span {
@@ -241,9 +245,14 @@
 }
 
 .footer .download {
+    position: fixed;
+    width:100%;
+    bottom:0;
+    z-index: 100;
     background:$brand-color;
     color:$background-color;
     @include media-query($on-medium-screen) {
+        position:static;
         display: none;
     }
 }
@@ -251,7 +260,7 @@
 .footer .download > span {
     background:transparent url(../images/apple_logo.svg) no-repeat 0 center;
     background-size: 17px 20px;
-    padding-left:30px
+    padding-left:30px;
 }
 
 
