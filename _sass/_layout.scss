@@ -52,36 +52,56 @@
 .coin-anim-wrapper {
     position: absolute;
     top: 100px;
-    left: 97px;
+    left: 96px;
     width: 80px; 
     height: 80px; 
     background: #000;
     border-radius: 100%;
 }
 
-.coin-anim-play {
-    -webkit-animation: 'sunpulse' 2s alternate infinite;
-    -moz-animation: 'sunpulse' 2s alternate infinite;
-    animation: 'sunpulse' 2s alternate infinite;
+.coin-anim-heads-play {
+    -webkit-animation: 'heads' 1s alternate infinite;
+    -moz-animation: 'heads' 1s alternate infinite;
+    animation: 'heads' 1s alternate infinite;
 }
 
-@-webkit-keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #fcb935, 0 0 50px #fcb935; }
-    from { box-shadow: 0 0 50px #000, 0 0 75px #000; }
-}
-@-moz-keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #fcb935, 0 0 50px #fcb935; }
-    from { box-shadow: 0 0 50px #000, 0 0 25px #000; }
+.coin-anim-tails-play {
+    -webkit-animation: 'tails' 1s alternate infinite;
+    -moz-animation: 'tails' 1s alternate infinite;
+    animation: 'tails' 1s alternate infinite;
 }
 
-@keyframes 'sunpulse' {
-    to { box-shadow: 0 0 100px #ff0, 0 0 50px #fcb935; }
-    from { box-shadow: 0 0 50px #000, 0 0 25px #000; }
+@-webkit-keyframes 'heads' {
+    to { box-shadow: 0 0 10px 8px #fcb935, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
+}
+@-moz-keyframes 'heads' {
+    to { box-shadow: 0 0 10px 8px #fcb935, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
+}
+
+@keyframes 'heads' {
+    to { box-shadow: 0 0 10px 8px #fcb935, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
+}
+
+@-webkit-keyframes 'tails' {
+    to { box-shadow: 0 0 10px 8px #fb0000, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
+}
+@-moz-keyframes 'tails' {
+    to { box-shadow: 0 0 10px 8px #fb0000, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
+}
+
+@keyframes 'tails' {
+    to { box-shadow: 0 0 10px 8px #fb0000, 0 0 50px #fcb935; }
+    from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
 }
 
 .coin-anim {
     position: absolute;
-    top: -56px;
+    top: -55px;
     left: -55px;
     background:transparent url(../images/coin_sprite.png) no-repeat 0 0;
     background-size:18050px 190px;

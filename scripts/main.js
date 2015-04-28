@@ -1,84 +1,85 @@
-(function(){
+(function() {
 
   var FlipOnIt = {
 
     timerId: null,
     wrapper: null,
+    wrapperClass: null,
     isAnimating: false,
     element: null,
     frameSize: 0,
     frameCount: 0,
-    repeat: false,
 
-
-    init: function(element, frameSize, frameCount, repeat) {
+    init: function(element, frameSize, wrapperClass) {
 
       var self = this;
 
       self.element = element;
-      self.frameCount = frameCount;
       self.frameSize = frameSize;
-      self.repeat = repeat;
+      self.wrapperClass = wrapperClass;
       self.wrapper = document.getElementById('coinAnimWrapper');
 
-      self.element.addEventListener('click', function(){
-
-         if (self.isAnimating == false) {
-
-            window.clearInterval(self.timerId);
-            self.wrapper.className = 'coin-anim-wrapper';
-            self.startAnimation();
-          }
-
-      });
-
-      self.startAnimation();
+      return self;
     },
 
 
-    pulse: function() {
-
-      this.wrapper.className = this.wrapper.className + ' coin-anim-play';
-    },
-
-
-    startAnimation: function() {
+    endAnimation: function(animClass) {
 
       var self = this;
-      var i = 0;
+
+      self.wrapper.className = self.wrapper.className + ' ' + animClass;
+      self.isAnimating = false;
+      window.clearInterval(self.timerId);
+    },
+
+
+    startAnimation: function(startFrame, frameCount, animClass) {
+
+      var self = this;
+
+      if (self.isAnimating == true) {
+        return;
+      }
+
+      self.wrapper.className = self.wrapperClass;
+      var i = startFrame;
       self.isAnimating = true;
       
       self.timerId = setInterval(function () {
         
-        if (!self.repeat && i >= self.frameCount) {
-
-          self.pulse();
-          self.isAnimating = false;
-          window.clearInterval(self.timerId);
-        }
-
-        if (i >= self.frameCount) {
-          i = 0;
+        if (i >= frameCount) {
+          self.endAnimation(animClass);
+          return;
         }
 
         self.element.style.backgroundPosition = '-' + (i * self.frameSize) + 'px 0px';
+
         i++;
 
-        console.log(self.element.style.backgroundPosition);
-
       }, 1000/24);
-
     }
-
   };
 
 
   document.addEventListener("DOMContentLoaded", function () {
 
     var element = document.getElementById('coinAnim');
-    FlipOnIt.init(element, 190, 94, false);
+    var flipper = FlipOnIt.init(element, 190, 'coin-anim-wrapper');
+    var isHeads = true;
 
+    flipper.startAnimation(0, 47, 'coin-anim-tails-play');
 
+    element.addEventListener('click', function() {
+
+      isHeads = !isHeads;
+
+      if (isHeads == true) {
+        flipper.startAnimation(0, 47, 'coin-anim-tails-play');
+      } else {
+        flipper.startAnimation(47, 94, 'coin-anim-heads-play');
+      }
+
+    });
 
   }, false);
 
