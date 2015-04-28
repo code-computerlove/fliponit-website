@@ -3,7 +3,7 @@ title: Flip On It
 email: mobileapps@codecomputerlove.com
 description: > # this means to ignore newlines until "baseurl:"
   Meta description for search
-baseurl: "/fliponit-website" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 
 
 # Build settings
