@@ -87,7 +87,7 @@
 
       var scrollOffsetY = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollOffsetY >= 700) {
+      if (scrollOffsetY >= 400) {
 
         if (phoneScreensActive == false) {
 
