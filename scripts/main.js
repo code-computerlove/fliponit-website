@@ -81,6 +81,30 @@
 
     });
 
+    var phoneScreensActive = false;
+
+    window.addEventListener('scroll', function(){
+
+      var scrollOffsetY = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollOffsetY >= 700) {
+
+        if (phoneScreensActive == false) {
+
+          var screen1 = document.getElementById('phoneScreen1');
+          var screen2 = document.getElementById('phoneScreen2');
+
+          screen1.className = screen1.className + ' phone-screen-1-move';
+          screen2.className = screen2.className + ' phone-screen-2-move';
+
+          phoneScreensActive = true;
+        }
+
+        
+      }
+
+    });
+
   }, false);
 
 })();
