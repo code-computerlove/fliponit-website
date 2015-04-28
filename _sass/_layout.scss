@@ -40,23 +40,38 @@
 }
 
 .watch {
-    position: absolute;
-    width: 281px;
+    position: relative;
+    margin:0 auto;
+    width: 190px;
     height: 281px;
     background: url(../images/watch.png);
-    background-size: 281px 281px;
+    background-size: 190px 281px;
     z-index: 100;
-    pointer-events: none;    
+    pointer-events: none; 
 }
 
 .coin-anim-wrapper {
     position: absolute;
     top: 100px;
-    left: 96px;
+    left: 76px;
     width: 80px; 
     height: 80px; 
     background: #000;
     border-radius: 100%;
+    @include media-query($on-medium-screen) {
+        left:96px;
+    }
+}
+
+.coin-anim {
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    background:transparent url(../images/coin_sprite.png) no-repeat 0 0;
+    background-size:18050px 190px;
+    width:190px;
+    height: 190px;
+    display: block;
 }
 
 .coin-anim-heads-play {
@@ -97,17 +112,6 @@
 @keyframes 'tails' {
     to { box-shadow: 0 0 10px 8px #fb0000, 0 0 50px #fcb935; }
     from { box-shadow: 0 0 5px 2px #000, 0 0 75px #000; }
-}
-
-.coin-anim {
-    position: absolute;
-    top: -55px;
-    left: -55px;
-    background:transparent url(../images/coin_sprite.png) no-repeat 0 0;
-    background-size:18050px 190px;
-    width:190px;
-    height: 190px;
-    display: block;
 }
 
 .phone-wrapper {
