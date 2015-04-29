@@ -1,8 +1,8 @@
 # Site settings
-title: Flip On It
+title: Flip On It - Apple Watch App
 email: mobileapps@codecomputerlove.com
 description: > # this means to ignore newlines until "baseurl:"
-  Meta description for search
+  Flip on it is an app for the Apple watch designed to help you make decisions. Download from the App Store today.
 baseurl: "" # the subpath of your site, e.g. /blog/
 
 
